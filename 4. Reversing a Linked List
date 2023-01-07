@@ -1,0 +1,21 @@
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if(head==NULL || head->next==NULL)
+        return head;
+        // using three pointer approach
+        // let p be the leading pointer
+        // q, r be the trailing pointer respectively
+        ListNode *p, *q, *r;
+        p=head;
+        q=r=NULL;
+        while(p){
+            r=q;
+            q=p;
+            p=p->next;
+            q->next=r;
+        }
+        head= q;
+        return head;
+    }
+};
