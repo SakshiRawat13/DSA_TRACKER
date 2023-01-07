@@ -1,0 +1,20 @@
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+       // using slow and fast pointer approach
+       if(head==nullptr || head->next==nullptr)
+       return false;
+       ListNode *p, *q;
+       p= head;
+       q= head;
+       while(q){
+          p=p->next;
+          q=q->next;
+          if(q)
+          q=q->next;
+          if(p==q)
+          return true;
+       }
+       return false;
+    }
+};
