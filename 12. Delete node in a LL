@@ -1,0 +1,14 @@
+class Solution {
+public:
+    void deleteNode(ListNode* node) {
+        ListNode* p=node, *q;
+        while(p->next){
+            int temp=p->val;
+            p->val=p->next->val;
+            p->next->val=temp;
+            q=p;
+            p=p->next;
+        }
+        q->next=nullptr;
+    }
+};
